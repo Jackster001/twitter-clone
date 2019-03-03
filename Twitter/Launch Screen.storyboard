@@ -17,7 +17,32 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="TwitterLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="cPf-fs-r0T">
+                                <rect key="frame" x="54" y="157" width="267" height="253"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="253" id="YQM-bY-1MK"/>
+                                    <constraint firstAttribute="width" constant="267" id="yxU-R3-fRf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter Clone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imz-iy-CPo">
+                                <rect key="frame" x="54" y="455.5" width="267" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="267" id="WCO-Sk-kKZ"/>
+                                    <constraint firstAttribute="height" constant="56" id="gh5-Lb-flK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="imz-iy-CPo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="21d-uC-iMT"/>
+                            <constraint firstItem="imz-iy-CPo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="150" id="80b-Yu-GaK"/>
+                            <constraint firstItem="cPf-fs-r0T" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="Ej5-4E-77l"/>
+                            <constraint firstItem="cPf-fs-r0T" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YPK-7a-OBq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
                 </viewController>
@@ -26,4 +51,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TwitterLogoBlue" width="400" height="400"/>
+    </resources>
 </document>
