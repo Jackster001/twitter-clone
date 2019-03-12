@@ -33,6 +33,10 @@ class HomeTableViewController: UITableViewController {
             print("Could not recieve tweets")
         })
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadMoreTweets()
+    }
     func loadMoreTweets(){
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         numberOfTweets += numberOfTweets
@@ -69,8 +73,16 @@ class HomeTableViewController: UITableViewController {
             if let imageData = data {
                 cell.profileImageView.image = UIImage(data: imageData)
             }
-            
+            cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+            cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+            cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
+
             return cell
+    }
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
+        if indexPath.row + 1 == tweetArray.count{
+            loadMoreTweets()
+        }
     }
     
     override func viewDidLoad() {
@@ -81,6 +93,7 @@ class HomeTableViewController: UITableViewController {
         tableView.refreshControl = myRefreshControl
         
     }
+    
 
     // MARK: - Table view data source
 
@@ -93,11 +106,6 @@ class HomeTableViewController: UITableViewController {
         // twitter api caller
         
         return tweetArray.count
-    }
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
-        if indexPath.row + 1 == tweetArray.count{
-            loadMoreTweets()
-        }
     }
 
     
